@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Menu</title>
 </head>
 <body>
-    <style>
+     <style>
         body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -34,7 +34,7 @@ header {
 }
 
 /* Título centralizado */
-header h2 {
+header h1 {
     margin: 0 auto;
     text-align: center;
 }
@@ -138,55 +138,25 @@ FOOTER{
     position: relative;
 }
     </style>
-    <header>
+      <header>
         <div class="menu-icon" onclick="location.href='menu.html'">☰</div>
-        <h2>Interclasse CELC</h2>
+        <h1>Interclasse CELC</h1>
         <button class="perfil-btn" onclick="location.href='perfi.html'">👤 Perfil</button>
     </header>
 
-    <!-- Menu lateral -->
-    <nav id="menu-lateral" class="menu-fechado">
-        <button class="fechar-menu" onclick="fecharMenu()">✖</button>
-        <ul>
-            <li><a href="jogos.html">Jogos</a></li>
-            <li><a href="pg2.html">a</a></li>
-            <li><a href="#">Página 3</a></li>
-            <li><a href="#">Página 4</a></li>
-            <li><a href="#">Página 5</a></li>
-            <li><a href="#">Página 6</a></li>
-        </ul>
-    </nav>
-
-    <!-- Conteúdo principal -->
-    <main>
-        <h1>Página Inicial</h1>
+    <main> <h1></h1>
         <div class="botoes">
-            <button class="botoes" onclick="location.href='jogos.html'">Jogos</button><br>
+            <button class="botoes" onclick="location.href='index.html'">Inicio</button><br>
             <button class="botoes" onclick="location.href='pg2.html'">a</button><br>
             <button>Página 3</button><br>
             <button>Página 4</button><br>
             <button>Página 5</button><br>
             <button>Página 6</button>
         </div>
-        <img src="celular 1.png">
-    </main>
+        <img src="celular 1.png"></main>
+
     <FOOTER>
         <p id="as"> &copy;Gustavo S. e Nicolas A.</p>
     </FOOTER>
-
-    <script>
-        function abrirMenu() {
-    document.getElementById("menu-lateral").classList.add("menu-aberto");
-    document.getElementById("menu-lateral").classList.remove("menu-fechado");
-}
-
-function fecharMenu() {
-    document.getElementById("menu-lateral").classList.remove("menu-aberto");
-    document.getElementById("menu-lateral").classList.add("menu-fechado");
-}
-    </script>
-</body>
-</html>
-    
 </body>
 </html>
