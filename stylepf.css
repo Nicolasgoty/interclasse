@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <style>
         body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -129,7 +120,6 @@ main {
     transform: translateX(0);
 }
 FOOTER{
-    text-align: center;
     background-color: #166b2d;
     color: white;
     padding: 15px 20px;
@@ -137,56 +127,10 @@ FOOTER{
     justify-content: space-between;
     position: relative;
 }
-    </style>
-    <header>
-        <div class="menu-icon" onclick="abrirMenu()">☰</div>
-        <h1>Interclasse CELC</h1>
-        <button class="perfil-btn" onclick="location.href='perfi.html'">👤 Perfil</button>
-    </header>
-
-    <!-- Menu lateral -->
-    <nav id="menu-lateral" class="menu-fechado">
-        <button class="fechar-menu" onclick="fecharMenu()">✖</button>
-        <ul>
-            <li><a href="jogos.html">Jogos</a></li>
-            <li><a href="#">Página 2</a></li>
-            <li><a href="#">Página 3</a></li>
-            <li><a href="#">Página 4</a></li>
-            <li><a href="#">Página 5</a></li>
-            <li><a href="#">Página 6</a></li>
-        </ul>
-    </nav>
-
-    <!-- Conteúdo principal -->
-    <main>
-        <h1>Página Inicial</h1>
-        <div class="botoes">
-            <button class="botoes" onclick="location.href='jogos.html'">Página 1</button><br>
-            <button>Página 2</button><br>
-            <button>Página 3</button><br>
-            <button>Página 4</button><br>
-            <button>Página 5</button><br>
-            <button>Página 6</button>
-        </div>
-        <img src="celular 1.png">
-    </main>
-    <FOOTER>
-        <p id="as"> &copy;Gustavo S. e Nicolas A.</p>
-    </FOOTER>
-
-    <script>
-        function abrirMenu() {
-    document.getElementById("menu-lateral").classList.add("menu-aberto");
-    document.getElementById("menu-lateral").classList.remove("menu-fechado");
+#pp{
+    text-align: center;
 }
-
-function fecharMenu() {
-    document.getElementById("menu-lateral").classList.remove("menu-aberto");
-    document.getElementById("menu-lateral").classList.add("menu-fechado");
+.form{
+    height: 36px;
+    width: 300px;
 }
-    </script>
-</body>
-</html>
-    
-</body>
-</html>
