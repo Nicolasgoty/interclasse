@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>login</title>
 </head>
 <body>
     <style>
@@ -65,8 +65,8 @@ main {
 
 /* Botões principais (6 brancos) */
 .botoes button {
-    margin: 12px;
-    padding: 30px 50px;
+    margin: 10px;
+    padding: 15px 40px;
     font-size: 16px;
     border: none;
     background-color: white;
@@ -137,42 +137,56 @@ FOOTER{
     justify-content: space-between;
     position: relative;
 }
+#pp{
+    text-align: center;
+}
+.form{
+    height: 36px;
+    width: 300px;
+}
+.btn{
+    height: 50px;
+    width: 300px;
+}
+.btna{
+    height: 36px;
+    width: 250px;
+}
+.p{
+    text-align: center;
+}
     </style>
-    <header>
+     <header>
+     
         <h2>Interclasse CELC</h2>
+        
     </header>
-
-   
-    </nav>
-
-    <!-- Conteúdo principal -->
     <main>
-        <h1> Faça o login:</h1>
-        <div class="botoes">
-            <button class="botoes" onclick="location.href='pgcadastro/login.html'">Jogador</button><br><br><br>
-            <button class="botoes" onclick="location.href='Pgcadastro/Inicio.html'">Aluno</button><br><br><br>
-            <button class="botoes" onclick="location.href='admcadastro/login.html'">Admistrador</button><br><br><br><br>
-            
-        </div>
-        <img src="celular 1.png">
+        <h1>Login</h1><br><br><br><br><br><br>
+        <h2><label for="text" class="form" name="name">email</label></h2>
+      <input type="text" class="form" name="nome"  placeholder="Ex: @escola"  required><br><br><br><br>
+
+
+        <h2><label for="nome">Nome completo:</label><h2></h2><br>
+      <input type="text" class="form" name="nome" required>
+<BR>
+      <h2><label for="text" class="form" name="name">Turma:</label></h2>
+      <input type="text" class="form" name="nome" required><br><br><br>
+
+      <h2><label for="text" class="form" name="name">idade:</label></h2>
+      <input type="text" class="form" name="nome" required><br><br><br><br><br><br>
+
+     <button class="btn" onclick="location.href='Inicio.html'">Entrar</button><br>
+
+     <h3> Se não é cadatrado:</h3>
+
+     <button class="btna" onclick="location.href='cadastro.html'">cadastrar-se</button>
+
     </main>
-    <FOOTER>
-        <p id="as"> &copy;Gustavo S. e Nicolas A.</p>
+
+     <FOOTER>
+        <p id="pp"> &copy;Gustavo S. e Nicolas A.</p>
     </FOOTER>
-
-    <script>
-        function abrirMenu() {
-    document.getElementById("menu-lateral").classList.add("menu-aberto");
-    document.getElementById("menu-lateral").classList.remove("menu-fechado");
-}
-
-function fecharMenu() {
-    document.getElementById("menu-lateral").classList.remove("menu-aberto");
-    document.getElementById("menu-lateral").classList.add("menu-fechado");
-}
     </script>
-</body>
-</html>
-    
 </body>
 </html>

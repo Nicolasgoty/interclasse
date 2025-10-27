@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Perfil</title>
+    <link rel="stylesheet" href="stylepf.css">
 </head>
 <body>
     <style>
@@ -65,8 +66,8 @@ main {
 
 /* Botões principais (6 brancos) */
 .botoes button {
-    margin: 12px;
-    padding: 30px 50px;
+    margin: 10px;
+    padding: 15px 40px;
     font-size: 16px;
     border: none;
     background-color: white;
@@ -129,7 +130,6 @@ main {
     transform: translateX(0);
 }
 FOOTER{
-    text-align: center;
     background-color: #166b2d;
     color: white;
     padding: 15px 20px;
@@ -137,42 +137,45 @@ FOOTER{
     justify-content: space-between;
     position: relative;
 }
+#pp{
+    text-align: center;
+}
+.form{
+    height: 36px;
+    width: 300px;
+}
+.btn{
+    height: 50px;
+    width: 300px;
+}
     </style>
-    <header>
-        <h2>Interclasse CELC</h2>
+     <header>
+        <div class="menu-icon" onclick="abrirMenu()">☰</div>
+        <h1>Interclasse CELC</h1>
+        <button class="perfil-btn" onclick="location.href='perfi.html'">👤 Perfil</button>
     </header>
-
-   
-    </nav>
-
-    <!-- Conteúdo principal -->
     <main>
-        <h1> Faça o login:</h1>
-        <div class="botoes">
-            <button class="botoes" onclick="location.href='pgcadastro/login.html'">Jogador</button><br><br><br>
-            <button class="botoes" onclick="location.href='Pgcadastro/Inicio.html'">Aluno</button><br><br><br>
-            <button class="botoes" onclick="location.href='admcadastro/login.html'">Admistrador</button><br><br><br><br>
-            
-        </div>
-        <img src="celular 1.png">
+        <h1>Seu perfil</h1><br><br><br><br><br><br>
+
+        <h2><label for="nome">Nome completo:</label><h2></h2><br>
+      <input type="text" class="form" name="nome" required>
+<BR>
+      <h2><label for="text" class="form" name="name">Turma:</label></h2>
+      <input type="text" class="form" name="nome" required>
+
+       <h2><label for="text" class="form" name="name">Time:</label></h2>
+      <input type="text" class="form" name="nome" required>
+
+     <h2><label for="text" class="form" name="name">Posição:</label></h2>
+      <input type="text" class="form" name="nome" required><br><br><br><br>
+
+       <button class="btn" type="submit" >Cadastrar</button>
+
     </main>
-    <FOOTER>
-        <p id="as"> &copy;Gustavo S. e Nicolas A.</p>
+
+     <FOOTER>
+        <p id="pp"> &copy;Gustavo S. e Nicolas A.</p>
     </FOOTER>
-
-    <script>
-        function abrirMenu() {
-    document.getElementById("menu-lateral").classList.add("menu-aberto");
-    document.getElementById("menu-lateral").classList.remove("menu-fechado");
-}
-
-function fecharMenu() {
-    document.getElementById("menu-lateral").classList.remove("menu-aberto");
-    document.getElementById("menu-lateral").classList.add("menu-fechado");
-}
     </script>
-</body>
-</html>
-    
 </body>
 </html>

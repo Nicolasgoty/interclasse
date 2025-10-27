@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,8 +65,8 @@ main {
 
 /* Botões principais (6 brancos) */
 .botoes button {
-    margin: 12px;
-    padding: 30px 50px;
+    margin: 10px;
+    padding: 15px 40px;
     font-size: 16px;
     border: none;
     background-color: white;
@@ -139,20 +139,34 @@ FOOTER{
 }
     </style>
     <header>
+        <div class="menu-icon" onclick="location.href='menu.html'">☰</div>
         <h2>Interclasse CELC</h2>
+        <button class="perfil-btn" onclick="location.href='perfi.html'">👤 Perfil</button>
     </header>
 
-   
+    <!-- Menu lateral -->
+    <nav id="menu-lateral" class="menu-fechado">
+        <button class="fechar-menu" onclick="fecharMenu()">✖</button>
+        <ul>
+            <li><a href="jogos.html">Jogos</a></li>
+            <li><a href="pg2.html">a</a></li>
+            <li><a href="#">Página 3</a></li>
+            <li><a href="#">Página 4</a></li>
+            <li><a href="#">Página 5</a></li>
+            <li><a href="#">Página 6</a></li>
+        </ul>
     </nav>
 
     <!-- Conteúdo principal -->
     <main>
-        <h1> Faça o login:</h1>
+        <h1>Página Inicial</h1>
         <div class="botoes">
-            <button class="botoes" onclick="location.href='pgcadastro/login.html'">Jogador</button><br><br><br>
-            <button class="botoes" onclick="location.href='Pgcadastro/Inicio.html'">Aluno</button><br><br><br>
-            <button class="botoes" onclick="location.href='admcadastro/login.html'">Admistrador</button><br><br><br><br>
-            
+            <button class="botoes" onclick="location.href='pgjogos/jogos.html'">Jogos</button><br>
+            <button class="botoes" onclick="location.href='pg2.html'">a</button><br>
+            <button>Página 3</button><br>
+            <button>Página 4</button><br>
+            <button>Página 5</button><br>
+            <button>Página 6</button>
         </div>
         <img src="celular 1.png">
     </main>
