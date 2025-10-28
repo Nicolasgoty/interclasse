@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio</title>
 </head>
 <body>
     <style>
@@ -26,6 +26,12 @@ header {
 }
 
 /* Ícone de menu (esquerda) */
+.menu-icon {
+    font-size: 25px;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+}
 
 /* Título centralizado */
 header h2 {
@@ -59,12 +65,12 @@ main {
 
 /* Botões principais (6 brancos) */
 .botoes button {
-    margin: 10px;
+    margin: 23px;
     padding: 15px 40px;
     font-size: 16px;
     border: none;
     background-color: white;
-    color: #166b2d;
+    color: #000000;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
@@ -84,7 +90,7 @@ main {
     width: 220px;
     height: 100%;
     background-color: #144f22;
-    color: white;
+    color: rgb(0, 0, 0);
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     padding-top: 20px;
@@ -94,18 +100,18 @@ main {
 #menu-lateral ul {
     list-style: none;
     padding: 0;
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 #menu-lateral ul li {
-    margin: 15px 0;
+    margin: 25px 0;
     text-align: center;
 }
 
 #menu-lateral ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 26px;
 }
 
 .fechar-menu {
@@ -119,20 +125,15 @@ main {
     right: 15px;
 }
 
-.menu-aberto {
-    transform: translateX(0);
-}
 FOOTER{
     text-align: center;
-background-color: #166b2d;
+    background-color: #166b2d;
     color: white;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
-    
     position: relative;
 }
-/* overlay */
 #menu-lateral {
   position: fixed;
   inset: 0;
@@ -156,7 +157,7 @@ background-color: #166b2d;
 .menu-conteudo {
   width: 260px;
   background: #144f22;
-  padding: 20px;
+  padding: 30px;
   box-shadow: 2px 0 12px rgba(0,0,0,0.4);
 }
 
@@ -178,51 +179,48 @@ background-color: #166b2d;
   font-size: 24px;
   cursor: pointer;
 }
-.menu-link{
-    margin: 30px;
-}
 
 
     </style>
     <header>
-        <button id="menu-toggle" class="menu-icon" aria-label="Abrir menu">☰</button>
-        <h2>Interclasse</h2>
-        <button class="perfil-btn" onclick="location.href='#'">👤 Perfil</button>
+      <button id="menu-toggle" class="menu-icon" aria-label="Abrir menu">☰</button>
+        <h2>Interclasse CELC</h2>
+         <button class="perfil.btn" onclick="location.href='../pgperfil/perfi.html'">👤 Perfil</button>
     </header>
 
-    <!-- Menu lateral -->
-    <nav id="menu-lateral" class="menu-fechado" aria-hidden="true">
+    <!-- Menu lateral (overlay) -->
+<nav id="menu-lateral" class="menu-fechado" aria-hidden="true">
   <div class="menu-conteudo" role="dialog" aria-modal="true">
     <button class="fechar-menu" id="menu-close" aria-label="Fechar menu">✖</button>
     <ul>
-      <li><a href="#pagina1" class="botoes">Página 1</a></li>
-      <li><a href="#pagina2" class="menu-link">Página 2</a></li>
-      <li><a href="#pagina3" class="menu-link">Página 3</a></li>
-      <li><a href="#pagina4" class="menu-link">Página 4</a></li>
-      <li><a href="#pagina5" class="menu-link">Página 5</a></li>
-      <li><a href="#pagina6" class="menu-link">Página 6</a></li>
+      <li><a href="Jogos.html" class="menu-link">Jogos</a></li>
+      <li><a href="Times.html" class="menu-link">Times</a></li>
+      <li><a href="Artilheiros.html" class="menu-link">Artilheiros</a></li>
+      <li><a href="tabela.html" class="menu-link">Tabela</a></li>
+      <li><a href="resultados.html" class="menu-link">Resultados</a></li>
+      <li><a href="Sorteio.html" class="menu-link">Sorteio</a></li>
     </ul>
   </div>
 </nav>
-    <!-- Conteúdo principal -->
     <main>
         <h1>Página Inicial</h1>
         <div class="botoes">
-            <button>Jogos</button><br>
-            <button>Página 2</button><br>
-            <button>Página 3</button><br>
-            <button>Página 4</button><br>
-            <button>Página 5</button><br>
-            <button>Página 6</button>
-        </div>
+            
+        <button class="botoes" onclick="location.href='../jogos.html'">Jogos</button><br>
+        <button class="botoes" onclick="location.href='../Times.html'">Times</button><br>
+        <button class="botoes" onclick="location.href='Artilheiros.html'">Artilheiros</button><br>
+        <button class="botoes" onclick="location.href='tabela.html'">Tabela</button><br>
+        <button class="botoes" onclick="location.href='resultados.html'">Resultados</button><br>
+        <button class="botoes" onclick="location.href='Sorteio.html'">Sorteio</button><br>
+        </div><br><br><br><br>
+        <img src="celular 1.png">
     </main>
     <FOOTER>
-        <p> &copy;Gustavo S. e Nicolas A.</p>
+        <p id="as"> &copy;Gustavo S. e Nicolas A.</p>
     </FOOTER>
 
     <script>
-      // elementos
-const menuToggle = document.getElementById('menu-toggle');
+      const menuToggle = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu-lateral');
 const menuClose = document.getElementById('menu-close');
 const menuConteudo = document.querySelector('.menu-conteudo');
@@ -254,14 +252,6 @@ menu.addEventListener('click', (e) => {
     fecharMenu(e);
   }
 });
-
-// impedir comportamentos indesejados de links com href="#"
-document.querySelectorAll('a[href="#"], a[href=""]').forEach(a => {
-  a.addEventListener('click', function(e) {
-    e.preventDefault();
-  });
-});
-
     </script>
 </body>
 </html>
