@@ -1,184 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #1b8a3b; /* verde principal */
+      color: white;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* Header */
+    header {
+      background-color: #166b2d;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+    }
+
+    /* Área principal */
+    main {
+      flex: 1; /* ocupa o centro vertical */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    /* Campos de entrada */
+    .form {
+      height: 36px;
+      width: 280px;
+      font-size: 18px;
+      padding-left: 10px;
+      border: none;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+
+    /* Botão de entrar */
+    .btn {
+      height: 50px;
+      width: 300px;
+      background-color: white;
+      color: #166b2d;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #e6e6e6;
+    }
+
+    /* Mensagem de erro */
+    #mensagem-erro {
+      color: red;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    /* Rodapé */
+    footer {
+      background-color: #166b2d;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #1b8a3b; /* verde principal */
-    color: white;
-}
+  <header>
+    <h2>Interclasse CELC</h2>
+  </header>
 
-/* Header */
-header {
-    background-color: #166b2d;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
+  <main>
+    <br>
+    <h1>Login</h1><br><br><br>
 
-/* Ícone de menu (esquerda) */
-.menu-icon {
-    font-size: 25px;
-    cursor: pointer;
-    position: absolute;
-    left: 20px;
-}
+    <label for="usuario"><h2>Nome:</h2></label><br>
+    <input type="text" id="usuario" class="form" required><br>
 
-/* Título centralizado */
-header h2 {
-    margin: 0 auto;
-    text-align: center;
-}
+    <label for="senha"><h2>Senha:</h2></label>
+    <input type="password" id="senha" class="form" required><br><br><br><br>
 
-/* Botão de perfil (direita) */
-.perfil-btn {
-    position: absolute;
-    right: 20px;
-    background-color: white;
-    color: #166b2d;
-    border: none;
-    border-radius: 6px;
-    padding: 8px 15px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
+    <button class="btn" onclick="verificarLogin()">Entrar</button>
 
-.perfil-btn:hover {
-    background-color: #e0e0e0;
-}
+    <p id="mensagem-erro"></p>
+  </main>
 
-/* Área principal */
-main {
-    text-align: center;
-    margin-top: 60px;
-}
+  <footer>
+    <p>&copy; Gustavo S. e Nicolas A.</p>
+  </footer>
 
-/* Botões principais (6 brancos) */
-.botoes button {
-    margin: 10px;
-    padding: 15px 40px;
-    font-size: 16px;
-    border: none;
-    background-color: white;
-    color: #166b2d;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
-    font-size: XX-large;
-}
+  <script>
+    function verificarLogin() {
+      const usuario = document.getElementById("usuario").value;
+      const senha = document.getElementById("senha").value;
+      const mensagemErro = document.getElementById("mensagem-erro");
 
-.botoes button:hover {
-    background-color: #e6e6e6;
-}
+      // 🔒 Login e senha corretos
+      const usuarioCorreto = "admin";
+      const senhaCorreta = "1234";
 
-/* Menu lateral */
-#menu-lateral {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 220px;
-    height: 100%;
-    background-color: #144f22;
-    color: white;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    padding-top: 20px;
-    z-index: 1000;
-}
-
-#menu-lateral ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 40px;
-}
-
-#menu-lateral ul li {
-    margin: 15px 0;
-    text-align: center;
-}
-
-#menu-lateral ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.fechar-menu {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-}
-
-.menu-aberto {
-    transform: translateX(0);
-}
-FOOTER{
-    text-align: center;
-    background-color: #166b2d;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-}
-#pp{
-    text-align: center;
-}
-.form{
-    height: 36px;
-    width: 300px;
-}
-.btn{
-    height: 50px;
-    width: 300px;
-}
-.btna{
-    height: 36px;
-    width: 250px;
-    margin: 30px;
-}
-.p{
-    text-align: center;
-}
-    </style>
-     <header>
-     
-        <h2>Interclasse CELC</h2>
-        
-    </header>
-    <main>
-        <h1>Login</h1><br><br><br><br><br><br>
-        <h2><label for="text" class="form" name="name">Nome:</label></h2>
-      <input type="text" class="form" name="nome" required><br><br><br>
-
-
-        <h2><label for="nome">Senha:</label><h2></h2><br>
-      <input type="text" class="form" name="nome" required>
-<BR><br><br><br>
-
-     <button class="btn" onclick="location.href='Inicio.html'">Entrar</button><br><br><br><br>
-
-    </main>
-
-     <FOOTER>
-        <p id="pp"> &copy;Gustavo S. e Nicolas A.</p>
-    </FOOTER>
-    </script>
+      if (usuario === usuarioCorreto && senha === senhaCorreta) {
+        // Login certo → vai para a página inicial
+        window.location.href = "Inicio.html";
+      } else {
+        // Login errado → mostra erro
+        mensagemErro.textContent = "Usuário ou senha incorretos!";
+      }
+    }
+  </script>
 </body>
 </html>

@@ -1,270 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela de Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #1b8a3b; /* verde principal */
-    color: white;
-}
+  <div class="login-container">
+    <h2>Login</h2>
 
-/* Header */
-header {
-    background-color: #166b2d;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
+    <form onsubmit="return verificarLogin()">
+      <label for="usuario">Usuário:</label>
+      <input type="text" id="usuario" placeholder="Digite seu usuário" required>
 
-/* Ícone de menu (esquerda) */
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" placeholder="Digite sua senha" required>
 
-/* Título centralizado */
-header h2 {
-    margin: 0 auto;
-    text-align: center;
-}
+      <button type="submit">Entrar</button>
 
-/* Botão de perfil (direita) */
-.perfil-btn {
-    position: absolute;
-    right: 20px;
-    background-color: white;
-    color: #166b2d;
-    border: none;
-    border-radius: 6px;
-    padding: 8px 15px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.perfil-btn:hover {
-    background-color: #e0e0e0;
-}
-
-/* Área principal */
-main {
-    text-align: center;
-    margin-top: 60px;
-}
-
-/* Botões principais (6 brancos) */
-.botoes button {
-    margin: 10px;
-    padding: 15px 40px;
-    font-size: 16px;
-    border: none;
-    background-color: white;
-    color: #166b2d;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
-    font-size: XX-large;
-}
-
-.botoes button:hover {
-    background-color: #e6e6e6;
-}
-
-/* Menu lateral */
-#menu-lateral {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 220px;
-    height: 100%;
-    background-color: #144f22;
-    color: white;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    padding-top: 20px;
-    z-index: 1000;
-}
-
-#menu-lateral ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 40px;
-}
-
-#menu-lateral ul li {
-    margin: 15px 0;
-    text-align: center;
-}
-
-#menu-lateral ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.fechar-menu {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-}
-
-.menu-aberto {
-    transform: translateX(0);
-}
-FOOTER{
-    text-align: center;
-background-color: #166b2d;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    
-    position: relative;
-}
-/* overlay */
-#menu-lateral {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.6);
-  display: flex;
-  justify-content: flex-start;
-  transform: translateX(-100%);
-  transition: transform 0.25s ease;
-  z-index: 2000;
-  pointer-events: none; /* desativado enquanto fechado */
-}
-
-/* quando aberto */
-#menu-lateral.menu-aberto {
-  transform: translateX(0);
-  pointer-events: auto;
-}
-
-.menu-conteudo {
-  width: 260px;
-  background: #144f22;
-  padding: 20px;
-  box-shadow: 2px 0 12px rgba(0,0,0,0.4);
-}
-
-/* botão fechar */
-.fechar-menu {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  float: right;
-}
-
-/* garantir que o botão de menu não tenha aparência de link */
-.menu-icon {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-}
-.menu-link{
-    margin: 30px;
-}
-
-
-    </style>
-    <header>
-        <button id="menu-toggle" class="menu-icon" aria-label="Abrir menu">☰</button>
-        <h2>Interclasse</h2>
-        <button class="perfil-btn" onclick="location.href='#'">👤 Perfil</button>
-    </header>
-
-    <!-- Menu lateral -->
-    <nav id="menu-lateral" class="menu-fechado" aria-hidden="true">
-  <div class="menu-conteudo" role="dialog" aria-modal="true">
-    <button class="fechar-menu" id="menu-close" aria-label="Fechar menu">✖</button>
-    <ul>
-      <li><a href="#pagina1" class="botoes">Página 1</a></li>
-      <li><a href="#pagina2" class="menu-link">Página 2</a></li>
-      <li><a href="#pagina3" class="menu-link">Página 3</a></li>
-      <li><a href="#pagina4" class="menu-link">Página 4</a></li>
-      <li><a href="#pagina5" class="menu-link">Página 5</a></li>
-      <li><a href="#pagina6" class="menu-link">Página 6</a></li>
-    </ul>
+      <p id="mensagem-erro"></p>
+    </form>
   </div>
-</nav>
-    <!-- Conteúdo principal -->
-    <main>
-        <h1>Página Inicial</h1>
-        <div class="botoes">
-            <button>Jogos</button><br>
-            <button>Página 2</button><br>
-            <button>Página 3</button><br>
-            <button>Página 4</button><br>
-            <button>Página 5</button><br>
-            <button>Página 6</button>
-        </div>
-    </main>
-    <FOOTER>
-        <p> &copy;Gustavo S. e Nicolas A.</p>
-    </FOOTER>
 
-    <script>
-      // elementos
-const menuToggle = document.getElementById('menu-toggle');
-const menu = document.getElementById('menu-lateral');
-const menuClose = document.getElementById('menu-close');
-const menuConteudo = document.querySelector('.menu-conteudo');
-
-// abre o menu (sem navegar)
-function abrirMenu(event) {
-  if (event) event.preventDefault(); // previne navegacao caso o botão esteja dentro de um <a> por engano
-  menu.classList.add('menu-aberto');
-  menu.setAttribute('aria-hidden', 'false');
-}
-
-// fecha o menu
-function fecharMenu(event) {
-  if (event) event.preventDefault();
-  menu.classList.remove('menu-aberto');
-  menu.setAttribute('aria-hidden', 'true');
-}
-
-// clicar no botão de toggle
-menuToggle.addEventListener('click', abrirMenu);
-
-// clicar no botão de fechar (✖)
-menuClose.addEventListener('click', fecharMenu);
-
-// clicar fora do menu-conteudo (no overlay) fecha o menu
-menu.addEventListener('click', (e) => {
-  // se o clique for no elemento overlay (menu), e não dentro do .menu-conteudo, fecha
-  if (!menuConteudo.contains(e.target)) {
-    fecharMenu(e);
-  }
-});
-
-// impedir comportamentos indesejados de links com href="#"
-document.querySelectorAll('a[href="#"], a[href=""]').forEach(a => {
-  a.addEventListener('click', function(e) {
-    e.preventDefault();
-  });
-});
-
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
-    
 </body>
 </html>
