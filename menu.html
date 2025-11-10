@@ -1,162 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu</title>
-</head>
-<body>
-     <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #1b8a3b; /* verde principal */
-    color: white;
-}
-
-/* Header */
-header {
-    background-color: #166b2d;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
-
-/* Ícone de menu (esquerda) */
-.menu-icon {
-    font-size: 25px;
-    cursor: pointer;
-    position: absolute;
-    left: 20px;
-}
-
-/* Título centralizado */
-header h1 {
-    margin: 0 auto;
-    text-align: center;
-}
-
-/* Botão de perfil (direita) */
-.perfil-btn {
-    position: absolute;
-    right: 20px;
-    background-color: white;
-    color: #166b2d;
-    border: none;
-    border-radius: 6px;
-    padding: 8px 15px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.perfil-btn:hover {
-    background-color: #e0e0e0;
-}
-
-/* Área principal */
-main {
-    text-align: center;
-    margin-top: 60px;
-}
-
-/* Botões principais (6 brancos) */
-.botoes button {
-    margin: 10px;
-    padding: 15px 40px;
-    font-size: 16px;
-    border: none;
-    background-color: white;
-    color: #166b2d;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
-    font-size: XX-large;
-}
-
-.botoes button:hover {
-    background-color: #e6e6e6;
-}
-
-/* Menu lateral */
-#menu-lateral {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 220px;
-    height: 100%;
-    background-color: #144f22;
-    color: white;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    padding-top: 20px;
-    z-index: 1000;
-}
-
-#menu-lateral ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 40px;
-}
-
-#menu-lateral ul li {
-    margin: 15px 0;
-    text-align: center;
-}
-
-#menu-lateral ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.fechar-menu {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-}
-
-.menu-aberto {
-    transform: translateX(0);
-}
-FOOTER{
-    text-align: center;
-    background-color: #166b2d;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-}
-    </style>
-      <header>
-        <div class="menu-icon" onclick="location.href='menu.html'">☰</div>
-        <h1>Interclasse CELC</h1>
-        <button class="perfil-btn" onclick="location.href='perfi.html'">👤 Perfil</button>
+    <link rel="stylesheet" href="../style-aluno/menu.css">
+  </head>
+  <body>
+    <header>
+      <div class="menu-icon" onclick="location.href='menu.html'">☰</div>
+      <h1>Interclasse CELC</h1>
+      <button class="perfil-btn" onclick="location.href='perfi.html'">
+        👤 Perfil
+      </button>
     </header>
 
-    <main> <h1></h1>
-        <div class="botoes">
-            <button class="botoes" onclick="location.href='index.html'">Inicio</button><br>
-            <button class="botoes" onclick="location.href='pg2.html'">a</button><br>
-            <button>Página 3</button><br>
-            <button>Página 4</button><br>
-            <button>Página 5</button><br>
-            <button>Página 6</button>
-        </div>
-        <img src="celular 1.png"></main>
+    <main>
+      <h1></h1>
+      <div class="botoes">
+        <button class="botoes" onclick="location.href='index.html'">
+          Inicio</button
+        ><br />
+        <button class="botoes" onclick="location.href='pg2.html'">a</button
+        ><br />
+        <button>Página 3</button><br />
+        <button>Página 4</button><br />
+        <button>Página 5</button><br />
+        <button>Página 6</button>
+      </div>
+      <img src="celular 1.png" />
+    </main>
 
-    <FOOTER>
-        <p id="as"> &copy;Gustavo S. e Nicolas A.</p>
-    </FOOTER>
-</body>
+    <footer>
+      <p id="as">&copy;Gustavo S. e Nicolas A.</p>
+    </footer>
+  </body>
 </html>

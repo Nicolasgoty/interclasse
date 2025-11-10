@@ -1,186 +1,249 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-  
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro - Jogador</title>
     <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #1b8a3b; /* verde principal */
-    color: white;
-}
-
-/* Header */
-header {
-    background-color: #166b2d;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
-
-/* Ícone de menu (esquerda) */
-.menu-icon {
-    font-size: 25px;
-    cursor: pointer;
-    position: absolute;
-    left: 20px;
-}
-
-/* Título centralizado */
-header h1 {
-    margin: 0 auto;
-    text-align: center;
-}
-
-/* Botão de perfil (direita) */
-.perfil-btn {
-    position: absolute;
-    right: 20px;
-    background-color: white;
-    color: #166b2d;
-    border: none;
-    border-radius: 6px;
-    padding: 8px 15px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.perfil-btn:hover {
-    background-color: #e0e0e0;
-}
-
-/* Área principal */
-main {
-    text-align: center;
-    margin-top: 60px;
-}
-
-/* Botões principais (6 brancos) */
-.botoes button {
-    margin: 10px;
-    padding: 15px 40px;
-    font-size: 16px;
-    border: none;
-    background-color: white;
-    color: #166b2d;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
-    font-size: XX-large;
-}
-
-.botoes button:hover {
-    background-color: #e6e6e6;
-}
-
-/* Menu lateral */
-#menu-lateral {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 220px;
-    height: 100%;
-    background-color: #144f22;
-    color: white;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    padding-top: 20px;
-    z-index: 1000;
-}
-
-#menu-lateral ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 40px;
-}
-
-#menu-lateral ul li {
-    margin: 15px 0;
-    text-align: center;
-}
-
-#menu-lateral ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.fechar-menu {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-}
-
-.menu-aberto {
-    transform: translateX(0);
-}
-FOOTER{
-    background-color: #166b2d;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-}
-#pp{
-    text-align: center;
-}
-.form{
-    height: 36px;
-    width: 300px;
-}
-.btn{
-    height: 50px;
-    width: 300px;
-}
-.btnaa{
-    height: 50px;
-    width: 300px;
-    margin: 50px;
-}
+      :root {
+        --verde: #34cd5d;
+        --verde-esc: #144f22;
+        --texto: #000;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Segoe UI, Roboto, Arial, sans-serif;
+        background: linear-gradient(180deg, #f7fff6, #fff);
+        color: var(--texto);
+      }
+      header {
+        background: var(--verde);
+        padding: 14px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .menu-icon {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.03);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      header h2 {
+        margin: 0;
+      }
+      .perfil-btn {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        color: var(--verde-esc);
+        border: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      main {
+        max-width: 720px;
+        margin: 34px auto;
+        padding: 18px;
+        text-align: center;
+      }
+      .card {
+        background: #fff;
+        padding: 18px;
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(20, 79, 34, 0.06);
+      }
+      .form {
+        height: 40px;
+        width: 100%;
+        max-width: 360px;
+        border-radius: 8px;
+        padding: 8px 10px;
+        border: 1px solid #ddd;
+        margin: 8px auto;
+        display: block;
+      }
+      .btn-primary {
+        width: 100%;
+        max-width: 360px;
+        padding: 14px;
+        border-radius: 8px;
+        border: none;
+        background: var(--verde);
+        color: var(--texto);
+        font-weight: 800;
+        cursor: pointer;
+        display: block;
+        margin: 12px auto;
+      }
+      #menu-lateral {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 260px;
+        background: var(--verde-esc);
+        color: #fff;
+        transform: translateX(-110%);
+        transition: transform 0.28s;
+        padding: 24px;
+        z-index: 1200;
+      }
+      #menu-lateral.open {
+        transform: translateX(0);
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 18px auto;
+      }
+      .card {
+        max-width: 460px;
+        margin: 0 auto;
+      }
+      .toast {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 28px;
+        background: rgba(20, 79, 34, 0.95);
+        color: #fff;
+        padding: 10px 14px;
+        border-radius: 999px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s, transform 0.25s;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-6px);
+        pointer-events: auto;
+      }
+      @media (max-width: 420px) {
+        .form,
+        .btn-primary {
+          max-width: 92%;
+        }
+        .card {
+          padding: 14px;
+        }
+      }
     </style>
-     <header>
-       
-        <h1>Interclasse CELC</h1>
-     
+  </head>
+  <body>
+    <header>
+      <button class="menu-icon" id="menuBtn">☰</button>
+      <h2>Interclasse CELC</h2>
+      <button
+        class="perfil-btn"
+        onclick="location.href='../pgperfil/perfi.html'"
+      >
+        Perfil
+      </button>
     </header>
+
+    <aside id="menu-lateral" aria-hidden="true">
+      <h3>Menu</h3>
+      <nav>
+        <ul style="list-style: none; padding: 0; margin-top: 18px">
+          <li style="margin: 10px 0">
+            <a href="inicio.html" style="color: #fff; text-decoration: none"
+              >Página Inicial</a
+            >
+          </li>
+          <li style="margin: 10px 0">
+            <a href="login.html" style="color: #fff; text-decoration: none"
+              >Login</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
     <main>
-        <h1>Cadastro</h1><br><br><br><br><br><br>
+      <div class="card">
+        <h1>Cadastro</h1>
+        <label for="nome">Nome completo</label><br />
+        <input id="nome" class="form" type="text" required />
 
-        <h2><label for="nome">Nome completo:</label><h2></h2><br>
-      <input type="text" class="form" name="nome" required>
-<BR>
-      <h2><label for="text" class="form" name="name">Turma:</label></h2>
-      <input type="text" class="form" name="nome" required>
+        <label for="turma">Turma</label><br />
+        <input id="turma" class="form" type="text" required />
 
-       <h2><label for="text" class="form" name="name">Time:</label></h2>
-      <input type="text" class="form" name="nome" required>
+        <label for="time">Time</label><br />
+        <input id="time" class="form" type="text" required />
 
-     <h2><label for="text" class="form" name="name">Posição:</label></h2>
-      <input type="text" class="form" name="nome" required><br>
+        <label for="posicao">Posição</label><br />
+        <input id="posicao" class="form" type="text" required />
 
-       <button class="btnaa" onclick="location.href='inicio.html'">Entrar</button>
-
+        <div style="height: 12px"></div>
+        <button class="btn-primary" data-target="inicio.html">Entrar</button>
+      </div>
     </main>
 
-     <FOOTER>
-        <p id="pp"> &copy;Gustavo S. e Nicolas A.</p>
-    </FOOTER>
+    <footer
+      style="
+        background: var(--verde);
+        color: #fff;
+        padding: 12px 18px;
+        text-align: center;
+      "
+    >
+      <p>&copy; Nicolas A.</p>
+    </footer>
+
+    <div class="toast" id="toast">Redirecionando...</div>
+
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const menu = document.getElementById("menu-lateral");
+      menuBtn.addEventListener("click", () => {
+        const open = menu.classList.toggle("open");
+        menu.setAttribute("aria-hidden", String(!open));
+      });
+
+      function showToast() {
+        const t = document.getElementById("toast");
+        t.classList.add("show");
+        clearTimeout(t._hide);
+        t._hide = setTimeout(() => t.classList.remove("show"), 1200);
+      }
+      function addRipple(e) {
+        const el = e.currentTarget;
+        const r = document.createElement("span");
+        r.className = "ripple";
+        const rect = el.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        r.style.width = r.style.height = size + "px";
+        r.style.left = e.clientX - rect.left - size / 2 + "px";
+        r.style.top = e.clientY - rect.top - size / 2 + "px";
+        el.appendChild(r);
+        setTimeout(() => r.remove(), 600);
+      }
+
+      document.querySelectorAll("[data-target]").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          addRipple(e);
+          showToast();
+          const t = this.getAttribute("data-target");
+          setTimeout(() => (location.href = t), 700);
+        });
+      });
     </script>
-</body>
+  </body>
 </html>

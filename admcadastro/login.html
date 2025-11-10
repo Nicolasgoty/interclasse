@@ -1,129 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #1b8a3b; /* verde principal */
-      color: white;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Administrador</title>
+  <link rel="stylesheet" href="../styleadm/login.css">
+  </head>
+  <body>
+    <header>
+      <h2>Interclasse CELC</h2>
+    </header>
 
-    /* Header */
-    header {
-      background-color: #166b2d;
-      color: white;
-      padding: 15px 20px;
-      text-align: center;
-    }
+    <main>
+      <div class="card">
+        <h1 style="margin-top: 0">Login</h1>
+        <label for="usuario"><strong>Nome:</strong></label>
+        <input type="text" id="usuario" class="form" required />
 
-    /* Área principal */
-    main {
-      flex: 1; /* ocupa o centro vertical */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+        <label for="senha"><strong>Senha:</strong></label>
+        <input type="password" id="senha" class="form" required />
 
-    h1 {
-      margin-bottom: 20px;
-    }
+        <button class="btn" id="entrarBtn">Entrar</button>
+        <p id="mensagem-erro"></p>
+      </div>
+    </main>
 
-    /* Campos de entrada */
-    .form {
-      height: 36px;
-      width: 280px;
-      font-size: 18px;
-      padding-left: 10px;
-      border: none;
-      border-radius: 6px;
-      margin-bottom: 20px;
-    }
+    <footer>
+      <p>&copy; 2°dDSB</p>
+    </footer>
 
-    /* Botão de entrar */
-    .btn {
-      height: 50px;
-      width: 300px;
-      background-color: white;
-      color: #000000;
-      font-size: 18px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-      font-weight: bold;
-    }
+    <div class="toast" id="toast">Redirecionando...</div>
 
-    .btn:hover {
-      background-color: #e6e6e6;
-    }
-
-    /* Mensagem de erro */
-    #mensagem-erro {
-      color: red;
-      font-weight: bold;
-      margin-top: 15px;
-    }
-
-    /* Rodapé */
-    footer {
-      background-color: #166b2d;
-      color: white;
-      text-align: center;
-      padding: 10px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h2>Interclasse CELC</h2>
-  </header>
-
-  <main>
-    <br>
-    <h1>Login</h1><br><br><br>
-
-    <label for="usuario"><h2>Nome:</h2></label><br>
-    <input type="text" id="usuario" class="form" required><br>
-
-    <label for="senha"><h2>Senha:</h2></label>
-    <input type="password" id="senha" class="form" required><br><br><br><br>
-
-    <button class="btn" onclick="verificarLogin()">Entrar</button>
-
-    <p id="mensagem-erro"></p>
-  </main>
-
-  <footer>
-    <p>&copy; Gustavo S. e Nicolas A.</p>
-  </footer>
-
-  <script>
-    function verificarLogin() {
-      const usuario = document.getElementById("usuario").value;
-      const senha = document.getElementById("senha").value;
-      const mensagemErro = document.getElementById("mensagem-erro");
-
-      // 🔒 Login e senha corretos
-      const usuarioCorreto = "admin";
-      const senhaCorreta = "1234";
-
-      if (usuario === usuarioCorreto && senha === senhaCorreta) {
-        // Login certo → vai para a página inicial
-        window.location.href = "Inicio.html";
-      } else {
-        // Login errado → mostra erro
-        mensagemErro.textContent = "Usuário ou senha incorretos!";
+    <script>
+      function showToast() {
+        const t = document.getElementById("toast");
+        t.classList.add("show");
+        clearTimeout(t._hide);
+        t._hide = setTimeout(() => t.classList.remove("show"), 1200);
       }
-    }
-  </script>
-</body>
 
+      function verificarLogin() {
+        const usuario = document.getElementById("usuario").value;
+        const senha = document.getElementById("senha").value;
+        const mensagemErro = document.getElementById("mensagem-erro");
+
+        const usuarioCorreto = "admin";
+        const senhaCorreta = "1234";
+
+        if (usuario === usuarioCorreto && senha === senhaCorreta) {
+          // mostra feedback, depois navega
+          showToast();
+          setTimeout(() => (window.location.href = "Inicio.html"), 800);
+        } else {
+          mensagemErro.textContent = "Usuário ou senha incorretos!";
+        }
+      }
+
+      document
+        .getElementById("entrarBtn")
+        .addEventListener("click", verificarLogin);
+    </script>
+  </body>
 </html>

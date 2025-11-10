@@ -1,260 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-</head>
-<body>
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #1b8a3b; /* verde principal */
-    color: white;
-}
-
-/* Header */
-header {
-    background-color: #166b2d;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
-
-/* Ícone de menu (esquerda) */
-.menu-icon {
-    font-size: 25px;
-    cursor: pointer;
-    position: absolute;
-    left: 20px;
-}
-
-/* Título centralizado */
-header h2 {
-    margin: 0 auto;
-    text-align: center;
-}
-
-/* Botão de perfil (direita) */
-.perfil-btn {
-    position: absolute;
-    right: 20px;
-    background-color: white;
-    color: #166b2d;
-    border: none;
-    border-radius: 6px;
-    padding: 8px 15px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.perfil-btn:hover {
-    background-color: #e0e0e0;
-}
-
-/* Área principal */
-main {
-    text-align: center;
-    margin-top: 60px;
-}
-
-/* Botões principais (6 brancos) */
-.botoes button {
-    margin: 23px;
-    padding: 15px 40px;
-    font-size: 16px;
-    border: none;
-    background-color: white;
-    color: #000000;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
-    font-size: XX-large;
-}
-
-.botoes button:hover {
-    background-color: #e6e6e6;
-}
-
-/* Menu lateral */
-#menu-lateral {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 220px;
-    height: 100%;
-    background-color: #144f22;
-    color: rgb(0, 0, 0);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    padding-top: 20px;
-    z-index: 1000;
-}
-
-#menu-lateral ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 50px;
-}
-
-#menu-lateral ul li {
-    margin: 25px 0;
-    text-align: center;
-}
-
-#menu-lateral ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 26px;
-}
-
-.fechar-menu {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-}
-
-FOOTER{
-    text-align: center;
-    background-color: #166b2d;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-}
-#menu-lateral {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.6);
-  display: flex;
-  justify-content: flex-start;
-  transform: translateX(-100%);
-  transition: transform 0.25s ease;
-  z-index: 2000;
-  pointer-events: none; /* desativado enquanto fechado */
-}
-
-/* quando aberto */
-#menu-lateral.menu-aberto {
-  transform: translateX(0);
-  pointer-events: auto;
-}
-
-.menu-conteudo {
-  width: 260px;
-  background: #144f22;
-  padding: 30px;
-  box-shadow: 2px 0 12px rgba(0,0,0,0.4);
-}
-
-/* botão fechar */
-.fechar-menu {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  float: right;
-}
-
-/* garantir que o botão de menu não tenha aparência de link */
-.menu-icon {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-
-    </style>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Área Administrador</title>
+    <link rel="stylesheet" href="../styleadm/inicio.css">
+  </head>
+  <body>
     <header>
-      <button id="menu-toggle" class="menu-icon" aria-label="Abrir menu">☰</button>
-        <h2>Interclasse CELC</h2>
-         <button class="perfil.btn" onclick="location.href='../pgperfil/perfi.html'">👤 Perfil</button>
+      <button id="menu-toggle" class="menu-icon" aria-label="Abrir menu">
+        ☰
+      </button>
+      <h2>Interclasse CELC</h2>
+      <button
+        class="perfil-btn"
+        onclick="location.href='../pgperfil/perfi.html'"
+      >
+        👤 Perfil
+      </button>
     </header>
 
     <!-- Menu lateral (overlay) -->
-<nav id="menu-lateral" class="menu-fechado" aria-hidden="true">
-  <div class="menu-conteudo" role="dialog" aria-modal="true">
-    <button class="fechar-menu" id="menu-close" aria-label="Fechar menu">✖</button>
-    <ul>
-      <li><a href="Jogos.html" class="menu-link">Jogos</a></li>
-      <li><a href="Times.html" class="menu-link">Times</a></li>
-      <li><a href="Artilheiros.html" class="menu-link">Artilheiros</a></li>
-      <li><a href="tabela.html" class="menu-link">Tabela</a></li>
-      <li><a href="resultados.html" class="menu-link">Resultados</a></li>
-      <li><a href="Sorteio.html" class="menu-link">Sorteio</a></li>
-    </ul>
-  </div>
-</nav>
+    <nav id="menu-lateral" aria-hidden="true">
+      <div class="menu-conteudo" role="dialog" aria-modal="true">
+        <button class="fechar-menu" id="menu-close" aria-label="Fechar menu">
+          ✖
+        </button>
+        <ul>
+          <li><a href="Jogos.html" class="menu-link">Jogos</a></li>
+          <li><a href="Times.html" class="menu-link">Times</a></li>
+          <li><a href="Artilheiros.html" class="menu-link">Artilheiros</a></li>
+          <li><a href="tabela.html" class="menu-link">Tabela</a></li>
+          <li><a href="resultados.html" class="menu-link">Resultados</a></li>
+          <li><a href="Sorteio.html" class="menu-link">Sorteio</a></li>
+        </ul>
+      </div>
+    </nav>
+
     <main>
-        <h1>Página Inicial</h1>
-        <div class="botoes">
-            
-        <button class="botoes" onclick="location.href='../jogos.html'">Jogos</button><br>
-        <button class="botoes" onclick="location.href='../Times.html'">Times</button><br>
-        <button class="botoes" onclick="location.href='Artilheiros.html'">Artilheiros</button><br>
-        <button class="botoes" onclick="location.href='tabela.html'">Tabela</button><br>
-        <button class="botoes" onclick="location.href='resultados.html'">Resultados</button><br>
-        <button class="botoes" onclick="location.href='Sorteio.html'">Sorteio</button><br>
-        </div><br><br><br><br>
-        <img src="celular 1.png">
+      <h1>Página Inicial</h1>
+      <div class="grid" role="list">
+        <div class="card" role="listitem">
+          <button class="btn-primary" data-target="../jogos.html">Jogos</button>
+        </div>
+        <div class="card" role="listitem">
+          <button class="btn-primary" data-target="../Times.html">Times</button>
+        </div>
+        <div class="card" role="listitem">
+          <button class="btn-primary" data-target="../Artilheiros.html">
+            Artilheiros
+          </button>
+        </div>
+        <div class="card" role="listitem">
+          <button class="btn-primary" data-target="../tabela.html">Tabela</button>
+        </div>
+        <div class="card" role="listitem">
+          <button class="btn-primary" data-target="../resultados.html">
+            Resultados
+          </button>
+        </div>
+        <div class="card" role="listitem">
+          <button class="btn-primary" data-target="../Sorteio.html">
+            Sorteio
+          </button>
+        </div>
+      </div>
+      <img
+        src="celular 1.png"
+        alt="Ilustração celular"
+        style="margin-top: 22px"
+      />
     </main>
-    <FOOTER>
-        <p id="as"> &copy;Gustavo S. e Nicolas A.</p>
-    </FOOTER>
+    <footer>
+      <p id="as">&copy;Gustavo S. e Nicolas A.</p>
+    </footer>
+
+    <div class="toast" id="toast">Redirecionando...</div>
 
     <script>
-      const menuToggle = document.getElementById('menu-toggle');
-const menu = document.getElementById('menu-lateral');
-const menuClose = document.getElementById('menu-close');
-const menuConteudo = document.querySelector('.menu-conteudo');
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu-lateral");
+      const menuClose = document.getElementById("menu-close");
+      const menuConteudo = document.querySelector(".menu-conteudo");
 
-// abre o menu (sem navegar)
-function abrirMenu(event) {
-  if (event) event.preventDefault(); // previne navegacao caso o botão esteja dentro de um <a> por engano
-  menu.classList.add('menu-aberto');
-  menu.setAttribute('aria-hidden', 'false');
-}
+      function abrirMenu(event) {
+        if (event) event.preventDefault();
+        menu.classList.add("open");
+        menu.setAttribute("aria-hidden", "false");
+      }
+      function fecharMenu(event) {
+        if (event) event.preventDefault();
+        menu.classList.remove("open");
+        menu.setAttribute("aria-hidden", "true");
+      }
 
-// fecha o menu
-function fecharMenu(event) {
-  if (event) event.preventDefault();
-  menu.classList.remove('menu-aberto');
-  menu.setAttribute('aria-hidden', 'true');
-}
+      menuToggle.addEventListener("click", abrirMenu);
+      menuClose.addEventListener("click", fecharMenu);
+      menu.addEventListener("click", (e) => {
+        if (!menuConteudo.contains(e.target)) fecharMenu(e);
+      });
 
-// clicar no botão de toggle
-menuToggle.addEventListener('click', abrirMenu);
+      function showToast() {
+        const t = document.getElementById("toast");
+        t.classList.add("show");
+        clearTimeout(t._hide);
+        t._hide = setTimeout(() => t.classList.remove("show"), 1200);
+      }
+      function addRipple(e) {
+        const el = e.currentTarget;
+        const r = document.createElement("span");
+        r.className = "ripple";
+        const rect = el.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        r.style.width = r.style.height = size + "px";
+        r.style.left = e.clientX - rect.left - size / 2 + "px";
+        r.style.top = e.clientY - rect.top - size / 2 + "px";
+        el.appendChild(r);
+        setTimeout(() => r.remove(), 600);
+      }
 
-// clicar no botão de fechar (✖)
-menuClose.addEventListener('click', fecharMenu);
-
-// clicar fora do menu-conteudo (no overlay) fecha o menu
-menu.addEventListener('click', (e) => {
-  // se o clique for no elemento overlay (menu), e não dentro do .menu-conteudo, fecha
-  if (!menuConteudo.contains(e.target)) {
-    fecharMenu(e);
-  }
-});
+      document.querySelectorAll("[data-target]").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          addRipple(e);
+          showToast();
+          const t = this.getAttribute("data-target");
+          setTimeout(() => (location.href = t), 700);
+        });
+      });
     </script>
-</body>
-</html>
-    
-</body>
+  </body>
 </html>
