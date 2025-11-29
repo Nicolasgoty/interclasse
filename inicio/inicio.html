@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página do Jogador</title>
+    <link rel="stylesheet" href="inicio.css">
+  </head>
+  <body>
+    <header>
+      <button class="menu-icon" id="menuBtn">☰</button>
+      <h2>Interclasse CELC</h2>
+      <button
+        class="perfil-btn"
+        onclick="location.href='../pgperfil/perfi.html'"
+      >
+        👤 Perfil
+      </button>
+    </header>
+
+    <aside id="menu-lateral" aria-hidden="true">
+      <h3>Menu</h3>
+      <nav>
+         <button class="fechar-menu" id="menu-close" aria-label="Fechar menu">
+          ✖
+        </button>
+        <ul style="list-style: none; padding: 0; margin-top: 18px">
+          <li style="margin: 10px 0">
+            <a href="../index.html" style="color: #fff; text-decoration: none"
+              >Início</a
+            >
+          </li>
+          <li style="margin: 10px 0">
+            <a
+              href="../pgjogos/jogos.html"
+              style="color: #fff; text-decoration: none"
+              >Jogos</a
+            >
+          </li>
+          <li style="margin: 10px 0">
+            <a href="../Times.html" style="color: #fff; text-decoration: none"
+              >Times</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <h1>Página Inicial</h1>
+      <div class="grid" role="list">
+        <div class="card" role="listitem">
+          <button class="btn-primary" data-target="../jogos-al/jogos.html">
+            Jogos
+          </button>
+        </div>
+        <div class="card" role="listitem">
+          <button class="btn-primary" data-target="../times-al/Times.html">Times</button>
+        </div>
+        <div class="card" role="listitem">
+          <button class="btn-primary" data-target="../artilheiros-al/artilheiros.html">
+            Artilheiros
+          </button>
+        </div>
+        <div class="card" role="listitem">
+          <button class="btn-primary" data-target="../tabela-al/tabela.html">
+            Tabela
+          </button>
+        </div>
+        <div class="card" role="listitem">
+          <button class="btn-primary" data-target="../Resultados-al/resultados.html">
+            Resultados
+          </button>
+        </div>
+      </div>
+      <img
+        src="../celular 1.png"
+        alt="Ilustração celular"
+        style="margin-top: 22px"
+      />
+    </main>
+
+    <footer>
+      <p>&copy;Nicolas A.</p>
+    </footer>
+
+    <div class="toast" id="toast">Redirecionando...</div>
+
+    <script src="inicio.js">
+     
+    </script>
+  </body>
+</html>

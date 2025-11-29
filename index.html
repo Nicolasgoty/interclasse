@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Início - Interclasse CELC</title>
-    <link rel="stylesheet" href="../style-aluno/style.css">
+    <link rel="stylesheet" href="style.css">
     <meta
       name="description"
       content="Página inicial do Interclasse CELC - acesso para Jogador, Aluno e Administrador"
@@ -12,21 +12,10 @@
   </head>
   <body>
     <header>
-      <button id="menuToggle" class="menu-icon" aria-label="Abrir menu">☰</button>
       <h2>Interclasse CELC</h2>
     </header>
 
-    <aside id="menu-lateral" aria-hidden="true">
-      <h3>Menu</h3>
-      <nav>
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="pgcadastro/inicio.html">Cadastro</a></li>
-          <li><a href="admcadastro/Inicio.html">Área ADM</a></li>
-          <li><a href="Times.html">Times</a></li>
-        </ul>
-      </nav>
-    </aside>
+   
 
     <main>
       <h1>Faça o login:</h1>
@@ -35,16 +24,16 @@
           <button class="btn-primary" data-target="pgcadastro/login.html">Jogador</button>
         </div>
         <div class="card" role="listitem">
-          <button class="btn-primary" data-target="pgcadastro/inicio.html">Aluno</button>
+          <button class="btn-primary" data-target="inicio/inicio.html">Aluno</button>
         </div>
         <div class="card" role="listitem">
-          <button class="btn-primary" data-target="admcadastro/login.html">Administrador</button>
+          <button class="btn-primary" data-target="../login-adm/login.html">Administrador</button>
         </div>
       </div>
 
       <img class="hero-img" src="celular 1.png" alt="Ilustração celular" />
     </main>
-
+<!-- ALO -->
     <footer>
       <p>&copy;2ºDSB</p>
     </footer>
@@ -52,14 +41,6 @@
     <div class="toast" id="toast">Redirecionando...</div>
 
     <script>
-      // Menu toggle (use dedicated header button)
-      const menuToggle = document.getElementById("menuToggle");
-      const menu = document.getElementById("menu-lateral");
-      menuToggle.addEventListener("click", () => {
-        const open = menu.classList.toggle("open");
-        menu.setAttribute("aria-hidden", String(!open));
-      });
-
       // Button ripple + navigation + toast
       function showToast() {
         const t = document.getElementById("toast");

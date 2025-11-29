@@ -1,0 +1,133 @@
+ :root {
+        --verde: #34cd5d;
+        --verde-esc: #144f22;
+        --texto: #000;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Segoe UI, Roboto, Arial, sans-serif;
+        background: linear-gradient(180deg, #f7fff6, #fff);
+        color: var(--texto);
+      }
+      header {
+        background: var(--verde);
+        padding: 14px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .menu-icon {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      header h2 {
+        margin: 0;
+        color: #fff;
+      }
+      .perfil-btn {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        color: var(--verde);
+        border: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      main {
+        max-width: 980px;
+        margin: 34px auto;
+        padding: 18px;
+        text-align: center;
+      }
+      .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        justify-content: center;
+      }
+        .card {
+          background: #fff;
+          padding: 18px;
+          border-radius: 10px;
+          min-width: 180px;
+          flex: 1 1 220px;
+          box-shadow: 0 6px 18px rgba(20, 79, 34, 0.06);
+          max-width: 320px;
+          margin: 0 auto;
+      }
+      .btn-primary {
+        width: 100%;
+        padding: 16px;
+        border-radius: 8px;
+        border: none;
+        background: var(--verde);
+        color: var(--texto);
+        font-weight: 800;
+        cursor: pointer;
+      }
+        img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 18px auto;
+        }
+        @media (max-width: 520px) {
+          .card {
+            min-width: 140px;
+            max-width: 92%;
+          }
+        }
+      .btn-primary:hover {
+        background: #80ff00;
+      }
+      #menu-lateral {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 260px;
+        background: var(--verde);
+        color: #fff;
+        transform: translateX(-110%);
+        transition: transform 0.28s;
+        padding: 24px;
+        z-index: 1200;
+      }
+      #menu-lateral.open {
+        transform: translateX(0);
+      }
+      .toast {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 28px;
+        background: rgba(20, 79, 34, 0.95);
+        color: #fff;
+        padding: 10px 14px;
+        border-radius: 999px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s, transform 0.25s;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-6px);
+        pointer-events: auto;
+      }

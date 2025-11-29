@@ -1,0 +1,93 @@
+:root {
+        --verde: #34cd5d;
+        --verde-esc: #144f22;
+        --texto: #000;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Segoe UI, Roboto, Arial, sans-serif;
+        background: linear-gradient(180deg, #f7fff6, #fff);
+        color: var(--texto);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        background: var(--verde);
+        padding: 14px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      header h2 {
+        margin: 0;
+      }
+      main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+      .card {
+        background: #fff;
+        padding: 24px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(20, 79, 34, 0.06);
+        width: 360px;
+      }
+      .form {
+        height: 42px;
+        width: 100%;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+      }
+      .btn {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        background: #34cd5d;
+        color: #000;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background: #80ff00;
+      }
+      #mensagem-erro {
+        color: red;
+        font-weight: 700;
+        margin-top: 10px;
+        min-height: 20px;
+      }
+      footer {
+        background: var(--verde);
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+      }
+      .toast {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 28px;
+        background: rgba(20, 79, 34, 0.95);
+        color: #fff;
+        padding: 10px 14px;
+        border-radius: 999px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s, transform 0.25s;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-6px);
+        pointer-events: auto;
+      }

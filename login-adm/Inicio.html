@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Área Administrador</title>
+    <link rel="stylesheet" href="inicio.css">
+  </head>
+  <body>
+    <header>
+      <button id="menu-toggle" class="menu-icon" aria-label="Abrir menu">
+        ☰
+      </button>
+      <h2>Interclasse CELC</h2>
+      <button
+        class="perfil-btn"
+        onclick="location.href='../perfil-adm/perfi.html'"
+      >
+        👤 Perfil
+      </button>
+    </header>
+
+    <!-- Menu lateral (overlay) -->
+    <nav id="menu-lateral" aria-hidden="true">
+      <div class="menu-conteudo" role="dialog" aria-modal="true">
+        <button class="fechar-menu" id="menu-close" aria-label="Fechar menu">
+          ✖
+        </button>
+        <ul>
+          <li><a href="Jogos.html" class="menu-link">Jogos</a></li>
+          <li><a href="Times.html" class="menu-link">Times</a></li>
+          <li><a href="Artilheiros.html" class="menu-link">Artilheiros</a></li>
+          <li><a href="tabela.html" class="menu-link">Tabela</a></li>
+          <li><a href="resultados.html" class="menu-link">Resultados</a></li>
+          <li><a href="Sorteio.html" class="menu-link">Sorteio</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <h1>Página Inicial</h1>
+      <div class="grid" role="list">
+        <div class="card" role="listitem">
+          <button class="btn-primary" data-target="../jogos-adm/Jogos.html">Jogos</button>
+        </div>
+        <div class="card" role="listitem">
+          <button class="btn-primary" data-target="../times-adm/Times.html">Times</button>
+        </div>
+        <div class="card" role="listitem">
+          <button class="btn-primary" data-target="../artilheiros-adm/Artilheiros.html">
+            Artilheiros
+          </button>
+        </div>
+        <div class="card" role="listitem">
+          <button class="btn-primary" data-target="../tabela-adm/tabela.html">Tabela</button>
+        </div>
+        <div class="card" role="listitem">
+          <button class="btn-primary" data-target="../resultados-adm/resultados.html">
+            Resultados
+          </button>
+        </div>
+        <div class="card" role="listitem">
+          <button class="btn-primary" data-target="../sorteio/Sorteio.html">
+            Sorteio
+          </button>
+        </div>
+      </div>
+      <img
+        src="../celular 1.png"
+        alt="Ilustração celular"
+        style="margin-top: 22px"
+      />
+    </main>
+    <footer>
+      <p id="as">&copy;Gustavo S. e Nicolas A.</p>
+    </footer>
+
+    <div class="toast" id="toast">Redirecionando...</div>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu-lateral");
+      const menuClose = document.getElementById("menu-close");
+      const menuConteudo = document.querySelector(".menu-conteudo");
+
+      function abrirMenu(event) {
+        if (event) event.preventDefault();
+        menu.classList.add("open");
+        menu.setAttribute("aria-hidden", "false");
+      }
+      function fecharMenu(event) {
+        if (event) event.preventDefault();
+        menu.classList.remove("open");
+        menu.setAttribute("aria-hidden", "true");
+      }
+
+      menuToggle.addEventListener("click", abrirMenu);
+      menuClose.addEventListener("click", fecharMenu);
+      menu.addEventListener("click", (e) => {
+        if (!menuConteudo.contains(e.target)) fecharMenu(e);
+      });
+
+      function showToast() {
+        const t = document.getElementById("toast");
+        t.classList.add("show");
+        clearTimeout(t._hide);
+        t._hide = setTimeout(() => t.classList.remove("show"), 1200);
+      }
+      function addRipple(e) {
+        const el = e.currentTarget;
+        const r = document.createElement("span");
+        r.className = "ripple";
+        const rect = el.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        r.style.width = r.style.height = size + "px";
+        r.style.left = e.clientX - rect.left - size / 2 + "px";
+        r.style.top = e.clientY - rect.top - size / 2 + "px";
+        el.appendChild(r);
+        setTimeout(() => r.remove(), 600);
+      }
+
+      document.querySelectorAll("[data-target]").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          addRipple(e);
+          showToast();
+          const t = this.getAttribute("data-target");
+          setTimeout(() => (location.href = t), 700);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Administrador</title>
+  <link rel="stylesheet" href="login.css">
+  </head>
+  <body>
+    <header>
+      <h2>Interclasse CELC</h2>
+    </header>
+
+    <main>
+      <div class="card">
+        <h1 style="margin-top: 0">Login</h1>
+        <label for="usuario"><strong>Nome:</strong></label>
+        <input type="text" id="usuario" class="form" required />
+
+        <label for="senha"><strong>Senha:</strong></label>
+        <input type="password" id="senha" class="form" required />
+
+        <button class="btn" id="entrarBtn">Entrar</button>
+        <p id="mensagem-erro"></p>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2°dDSB</p>
+    </footer>
+
+    <div class="toast" id="toast">Redirecionando...</div>
+
+    <script src="login.js">
+      </script>
+  </body>
+</html>
